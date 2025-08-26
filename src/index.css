@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+
+
+/* for custom color */
+@theme {
+    --color-redh:red;
+    --color-greenb:green;
+    --color-primary:purple;
+
+    /* this overrides and gives 'blue' instead of 'red-700'*/
+    --color-red-700:blue;
+
+    /* gives access to only self-defined colors inside 'theme' i.e. we can only use colors from here and not inbuilt colors in tailswind*/
+    --color-*:initial;
+    --color-white:#fff;
+    --color-black:#000;
+    --animate-trin: ani 2s ease-in 0s infinite;
+}
+
+
+/* for custom animation */
+
+@keyframes ani {
+    20% {
+      transform: scale(1);
+      background-color: red;
+    }
+
+    50% {
+      background-color: green;
+    }
+
+    100% {
+      transform: rotate();
+    }
+  }
+
+/* BASE LAYER */
+/* for base elements eg:h, p , etc */
+@layer base{
+    h1{
+        @apply text-2xl font-semibold my-3;
+    }
+}
+
+/* COMPONENT LAYER */
+/* for styling component same way */
+@layer components{
+    .card{
+        @apply h-fit w-80 bg-black text-white rounded-2xl shadow-lg text-center not-even:px-3 py-9 m-2;
+    }
+}
+
+
+/* FOR UTILITIES */
