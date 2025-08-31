@@ -10,6 +10,11 @@ import Page1 from "./Pages/Home/Page1";
 import Page2 from "./Pages/Home/Page2";
 import Home from "./Pages/Home/Home";
 import Today from "./Pages/today";
+import RootLayOut from "./Components/RootLayOut";
+import Notfound from "./Pages/notfound/Notfound";
+import GridCard from "./BrArchitect/GridCard";
+import RootLayout from "./LeCatering/RootLayout";
+import RootBrArchitect from "./BrArchitect/RootBrArchitect";
 
 // export default function App() {
 //   greet();
@@ -63,33 +68,72 @@ import Today from "./Pages/today";
 
 export default function App() {
 
-  const router = createBrowserRouter([
+//  // without root layout
+  // const router = createBrowserRouter([
+  //   {
+  //     path:'/',
+  //     element: <Home />,
+  //     children: [
+  //       {
+  //         path:'/page1',
+  //         // index:true, -shows the true child along with parent file in default when the parent file is rendered
+  //         element:<Page1 />
+  //       },
+  //       {
+  //         path:'/page2',
+  //         element:<Page2/>
+  //       },
+  //     ]
+  //   },
+  //   {
+  //     path:'/products',
+  //     element: <Products />
+  //   },
+  //   {
+  //     path:'/contacts',
+  //     element: <Contacts />
+  //   },
+  //   {
+  //     path:'/colorCustom',
+  //     element: <Today />
+  //   }
+  // ])
+
+  const router =createBrowserRouter([
     {
       path:'/',
-      element: <Home />,
-      children: [
+      element:<RootLayOut />,
+      children:[
         {
-          path:'/page1',
-          // index:true, -shows the true child along with parent file in default when the parent file is rendered
-          element:<Page1 />
+          index: true,
+          element: <Home/>
         },
         {
-          path:'/page2',
-          element:<Page2/>
+          path:'products',
+          element: <Products />
         },
+        {
+          path:'contacts',
+          element: <Contacts />
+        },
+        {
+          path:'colorCustom',
+          element: <Today />
+        },
+        {
+          path:'cater',
+          element: <RootLayout />
+        },
+        {
+          path:'brarchi',
+          element: <RootBrArchitect />
+        },
+
       ]
     },
     {
-      path:'/products',
-      element: <Products />
-    },
-    {
-      path:'/contacts',
-      element: <Contacts />
-    },
-    {
-      path:'/colorCustom',
-      element: <Today />
+      path:'*', //path that is not defined
+      element:<Notfound />
     }
   ])
   
