@@ -10,11 +10,17 @@ import Page1 from "./Pages/Home/Page1";
 import Page2 from "./Pages/Home/Page2";
 import Home from "./Pages/Home/Home";
 import Today from "./Pages/today";
-import RootLayOut from "./Components/RootLayOut";
+// import RootLayOut from "./Components/RootLayOut";
 import Notfound from "./Pages/notfound/Notfound";
-import GridCard from "./BrArchitect/GridCard";
 import RootLayout from "./LeCatering/RootLayout";
 import RootBrArchitect from "./BrArchitect/RootBrArchitect";
+import RootLayOut from "./C/RootLayOut";
+import Hook1 from "./Hooks/Hook1";
+import Hook2 from "./Hooks/Hook2";
+import RootMeal from "./MEAL/RootMeal";
+import MealList from "./MEAL/MealList";
+import MealCat from "./MEAL/MealCat";
+import MealInfo from "./MEAL/MealInfo";
 
 // export default function App() {
 //   greet();
@@ -102,7 +108,7 @@ export default function App() {
   const router =createBrowserRouter([
     {
       path:'/',
-      element:<RootLayOut />,
+      element:<RootLayOut/>,
       children:[
         {
           index: true,
@@ -127,6 +133,32 @@ export default function App() {
         {
           path:'brarchi',
           element: <RootBrArchitect />
+        },
+        {
+          path:'hooks',
+          element: <Hook1 />
+        },
+        {
+          path:'hookFake',
+          element: <Hook2 />
+        },
+        {
+          path:'meal',
+          element: <RootMeal />,
+          children:[
+            {
+              index:true,
+              element: <MealCat/>
+            },
+            {
+              path:'category-items/:name',
+              element: <MealList />
+            },
+            {
+              path:'category/meal/:name',
+              element: <MealInfo />
+            }
+          ]
         },
 
       ]
