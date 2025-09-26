@@ -1,6 +1,7 @@
 //npm i formik
 //npm i uuid-=>for unique id
 
+import { Formik } from 'formik';
 import { v4 as uuidv4 } from 'uuid';
 export default function Formik1(){
   const [data, setData] = useState([]);
