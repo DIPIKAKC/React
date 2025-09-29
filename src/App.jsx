@@ -21,6 +21,8 @@ import RootMeal from "./MEAL/RootMeal";
 import MealList from "./MEAL/MealList";
 import MealCat from "./MEAL/MealCat";
 import MealInfo from "./MEAL/MealInfo";
+import HomeProduct from "./Redux/API-based/product";
+import RootLayoutProduct from "./Redux/API-based/product/RootLayoutProduct";
 
 // export default function App() {
 //   greet();
@@ -126,10 +128,14 @@ export default function App() {
           path:'colorCustom',
           element: <Today />
         },
+
+        //le catering
         {
           path:'cater',
           element: <RootLayout />
         },
+
+        //Br architects
         {
           path:'brarchi',
           element: <RootBrArchitect />
@@ -142,6 +148,8 @@ export default function App() {
           path:'hookFake',
           element: <Hook2 />
         },
+
+        //Meals
         {
           path:'meal',
           element: <RootMeal />,
@@ -160,6 +168,19 @@ export default function App() {
             }
           ]
         },
+        
+        //Createapi- Products
+        {
+          path:'productsapi',
+          element: <RootLayoutProduct />,
+          children:[
+            {
+              index:true,
+              element: <HomeProduct/>
+            },
+          ]
+        },
+
 
       ]
     },
