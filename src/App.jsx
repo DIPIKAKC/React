@@ -23,6 +23,7 @@ import MealCat from "./MEAL/MealCat";
 import MealInfo from "./MEAL/MealInfo";
 import HomeProduct from "./Redux/API-based/product";
 import RootLayoutProduct from "./Redux/API-based/product/RootLayoutProduct";
+import Quotes from "./Redux/API-based/Quotes/Quotes";
 
 // export default function App() {
 //   greet();
@@ -41,7 +42,7 @@ import RootLayoutProduct from "./Redux/API-based/product/RootLayoutProduct";
 //         </div>
 
 //       </div>
-      
+
 //       <h1 className="text-2xl text-pink-500">hello </h1>
 
 //     </div>
@@ -76,7 +77,7 @@ import RootLayoutProduct from "./Redux/API-based/product/RootLayoutProduct";
 
 export default function App() {
 
-//  // without root layout
+  //  // without root layout
   // const router = createBrowserRouter([
   //   {
   //     path:'/',
@@ -107,90 +108,97 @@ export default function App() {
   //   }
   // ])
 
-  const router =createBrowserRouter([
+  const router = createBrowserRouter([
     {
-      path:'/',
-      element:<RootLayOut/>,
-      children:[
+      path: '/',
+      element: <RootLayOut />,
+      children: [
         {
           index: true,
-          element: <Home/>
+          element: <Home />
         },
         {
-          path:'products',
+          path: 'products',
           element: <Products />
         },
         {
-          path:'contacts',
+          path: 'contacts',
           element: <Contacts />
         },
         {
-          path:'colorCustom',
+          path: 'colorCustom',
           element: <Today />
         },
 
         //le catering
         {
-          path:'cater',
+          path: 'cater',
           element: <RootLayout />
         },
 
         //Br architects
         {
-          path:'brarchi',
+          path: 'brarchi',
           element: <RootBrArchitect />
         },
         {
-          path:'hooks',
+          path: 'hooks',
           element: <Hook1 />
         },
         {
-          path:'hookFake',
+          path: 'hookFake',
           element: <Hook2 />
         },
 
         //Meals
         {
-          path:'meal',
+          path: 'meal',
           element: <RootMeal />,
-          children:[
+          children: [
             {
-              index:true,
-              element: <MealCat/>
+              index: true,
+              element: <MealCat />
             },
             {
-              path:'category-items/:name',
+              path: 'category-items/:name',
               element: <MealList />
             },
             {
-              path:'category/meal/:name',
+              path: 'category/meal/:name',
               element: <MealInfo />
             }
           ]
         },
-        
-        //Createapi- Products
+
+        //CREATEAPI- 
+
+        // Products
         {
-          path:'productsapi',
+          path: 'productsapi',
           element: <RootLayoutProduct />,
-          children:[
+          children: [
             {
-              index:true,
-              element: <HomeProduct/>
+              index: true,
+              element: <HomeProduct />
             },
           ]
+        },
+        // Quotes
+        {
+          path: 'quotes',
+          element: <Quotes />
         },
 
 
       ]
     },
     {
-      path:'*', //path that is not defined
-      element:<Notfound />
+      path: '*', //path that is not defined
+      element: <Notfound />
     }
   ])
-  
-    return <RouterProvider router={router} />
+
+  return <RouterProvider router={router} />
   // const post = {
   //   "userId": 1,
   //   "id": 1,
