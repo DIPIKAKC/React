@@ -24,6 +24,9 @@ import MealInfo from "./MEAL/MealInfo";
 import HomeProduct from "./Redux/API-based/product";
 import RootLayoutProduct from "./Redux/API-based/product/RootLayoutProduct";
 import Quotes from "./Redux/API-based/Quotes/Quotes";
+import RootRecipe from "./Redux/API-based/Recipes/RootRecipe";
+import Recipe from "./Redux/API-based/Recipes/Recipe";
+import SearchRecipe from "./Redux/API-based/Recipes/SearchRecipe";
 
 // export default function App() {
 //   greet();
@@ -187,6 +190,21 @@ export default function App() {
         {
           path: 'quotes',
           element: <Quotes />
+        },
+        //Recipes
+        {
+          path: 'recipe',
+          element: <RootRecipe />,
+          children: [
+            {
+              index: true,
+              element: <Recipe />
+            },
+            {
+              path: 'search',
+              element: <SearchRecipe />
+            }
+          ]
         },
 
 
