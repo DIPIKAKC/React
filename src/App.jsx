@@ -27,6 +27,11 @@ import Quotes from "./Redux/API-based/Quotes/Quotes";
 import RootRecipe from "./Redux/API-based/Recipes/RootRecipe";
 import Recipe from "./Redux/API-based/Recipes/Recipe";
 import SearchRecipe from "./Redux/API-based/Recipes/SearchRecipe";
+import HomeForm from "./Redux/Locally/Form-local/HomeForm";
+import RootLayoutPosts from "./Redux/API-based/POST/RootLayoutPosts";
+import Posts from "./Redux/API-based/POST/Posts";
+import AddPost from "./Redux/API-based/POST/AddPost";
+import EditPost from "./Redux/API-based/POST/EditPost";
 
 // export default function App() {
 //   greet();
@@ -173,6 +178,14 @@ export default function App() {
           ]
         },
 
+        //CREATESLICE-
+
+        //Form
+        {
+          path: 'formhome',
+          element: <HomeForm />
+        },
+
         //CREATEAPI- 
 
         // Products
@@ -204,6 +217,25 @@ export default function App() {
               path: 'search',
               element: <SearchRecipe />
             }
+          ]
+        },
+        //
+        {
+          path: 'posts',
+          element: <RootLayoutPosts />,
+          children: [
+            {
+              index: true,
+              element: <Posts />
+            },
+            {
+              path: 'add-posts',
+              element: <AddPost />
+            },
+            {
+              path: 'update-posts/:id', //path params ('/' slash gaera direct id dine), query params ('?' garera id jane)
+              element: <EditPost />
+            },
           ]
         },
 
