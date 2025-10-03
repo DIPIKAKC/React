@@ -21,8 +21,6 @@ import RootMeal from "./MEAL/RootMeal";
 import MealList from "./MEAL/MealList";
 import MealCat from "./MEAL/MealCat";
 import MealInfo from "./MEAL/MealInfo";
-import HomeProduct from "./Redux/API-based/product";
-import RootLayoutProduct from "./Redux/API-based/product/RootLayoutProduct";
 import Quotes from "./Redux/API-based/Quotes/Quotes";
 import RootRecipe from "./Redux/API-based/Recipes/RootRecipe";
 import Recipe from "./Redux/API-based/Recipes/Recipe";
@@ -32,6 +30,8 @@ import RootLayoutPosts from "./Redux/API-based/POST/RootLayoutPosts";
 import Posts from "./Redux/API-based/POST/Posts";
 import AddPost from "./Redux/API-based/POST/AddPost";
 import EditPost from "./Redux/API-based/POST/EditPost";
+import RootLayoutProduct from "./Redux/API-based/product/RootLayoutProduct";
+import HomeProduct from "./Redux/API-based/product/HomeProduct";
 
 // export default function App() {
 //   greet();
